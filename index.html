@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drawing Board</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Drawing Board</h1>
+        
+        <div class="toolbar">
+            <div class="tool-group">
+                <button id="undo-btn" class="tool-btn" title="Undo">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 7v6h6"></path>
+                        <path d="M21 17a9 9 0 00-9-9 9 9 0 00-6 2.3L3 13"></path>
+                    </svg>
+                </button>
+                <button id="redo-btn" class="tool-btn" title="Redo">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 7v6h-6"></path>
+                        <path d="M3 17a9 9 0 019-9 9 9 0 016 2.3l3 2.7"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <div class="tool-group">
+                <button id="draw-btn" class="tool-btn active" title="Draw">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+                        <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+                        <path d="M2 2l7.586 7.586"></path>
+                        <circle cx="11" cy="11" r="2"></circle>
+                    </svg>
+                </button>
+                <button id="eraser-btn" class="tool-btn" title="Eraser">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 20H7l-4-4a1 1 0 010-1.414l10-10a1 1 0 011.414 0l6.586 6.586a1 1 0 010 1.414L17 17"></path>
+                        <path d="M6 18l6-6"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <div class="tool-group">
+                <label for="color-picker" class="color-label">Color:</label>
+                <input type="color" id="color-picker" value="#000000">
+            </div>
+            
+            <div class="tool-group">
+                <label for="brush-size" class="brush-label">Brush Size:</label>
+                <input type="range" id="brush-size" min="1" max="50" value="5">
+                <span id="brush-size-value">5</span>
+            </div>
+            
+            <div class="tool-group">
+                <button id="clear-btn" class="tool-btn danger" title="Clear Canvas">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="3 6 5 6 21 6"></polyline>
+                        <path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"></path>
+                    </svg>
+                </button>
+                <button id="download-btn" class="tool-btn success" title="Download">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"></path>
+                        <polyline points="7 10 12 15 17 10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <div class="canvas-container">
+            <canvas id="drawing-canvas"></canvas>
+        </div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.3.0/fabric.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 
+
