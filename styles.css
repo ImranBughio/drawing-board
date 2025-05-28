@@ -143,11 +143,18 @@ body {
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     background: white;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
 }
 
 #drawing-canvas {
     display: block;
     cursor: crosshair;
+    max-width: 100%;
+    height: auto;
 }
 
 /* Custom range slider styling */
